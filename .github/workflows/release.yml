@@ -44,10 +44,7 @@ jobs:
       with:
         script: |
           return {
-            inspect_image: [
-              'test_project_node',
-              'amazon/aws-cli',
-            ],
+            inspect_image: [],
             include: [
               {
                 inspect_image: 'test_project_node',
