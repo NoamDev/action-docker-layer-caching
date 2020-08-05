@@ -147,6 +147,8 @@ class LayerCache {
     const cacheId = await LayerCache.dismissCacheAlreadyExistsError(cache.saveCache([path], key))
     core.info(`Stored layer cache, key: ${key}, id: ${cacheId}`)
 
+    await new Promise(resolve => setTimeout(resolve, 2000))
+
     return cacheId
   }
 
@@ -207,6 +209,8 @@ class LayerCache {
     if (result == null) {
       throw new Error(`Layer cache not found: ${JSON.stringify({ id })}`)
     }
+
+    await new Promise(resolve => setTimeout(resolve, 2000))
 
     return result
   }
